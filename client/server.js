@@ -10,6 +10,9 @@ app.use(compression());
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 
+var distDir = __dirname + '/dist/';
+app.use(express.static(distDir));
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('build'));
 

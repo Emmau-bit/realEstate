@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const connectDB = require('./config/db');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -12,13 +13,16 @@ dotenv.config();
 const app = express();
 
 // Connect Database
-mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
-  })
-  .then(() => console.log('DB Connected'));
+connectDB();
+
+// // Connect Database
+// mongoose
+//   .connect(process.env.DATABASE, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true
+//   })
+//   .then(() => console.log('DB Connected'));
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());

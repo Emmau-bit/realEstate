@@ -53,6 +53,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const compression = require('compression');
+const connectDB = require('./config/db');
 const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -65,15 +66,18 @@ app.use(compression());
 
 const app = express();
 
+// // Connect Database
+// mongoose
+//   .connect(process.env.DATABASE, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false,
+//     useUnifiedTopology: true
+//   })
+//   .then(() => console.log('DB Connected'));
+
 // Connect Database
-mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-  })
-  .then(() => console.log('DB Connected'));
+connectDB();
 
 // middlewares
 app.use(morgan('dev'));

@@ -52,7 +52,6 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const compression = require('compression');
 const connectDB = require('./config/db');
 const path = require('path');
 const morgan = require('morgan');
@@ -61,8 +60,6 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const expressValidator = require('express-validator');
 require('dotenv').config();
-
-app.use(compression());
 
 const app = express();
 

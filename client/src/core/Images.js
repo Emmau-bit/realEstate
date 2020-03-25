@@ -18,16 +18,14 @@ import I9 from '../img/c9.jpg';
 import I10 from '../img/c10.jpg';
 import I11 from '../img/c11.jpg';
 import I12 from '../img/c12.jpg';
-import I13 from '../img/c13.jpg';
-import I14 from '../img/c14.jpg';
 
 const Images = () => {
   return (
     <MDBContainer>
-      <h1 className='bg-dark text-center'>Take A Look</h1>
+      <h1 className='bg-dark text-center'>All Cars</h1>
       <MDBCarousel
         activeItem={1}
-        length={14}
+        length={12}
         showControls={true}
         showIndicators={false}
         className='z-depth-1'
@@ -92,16 +90,6 @@ const Images = () => {
           <MDBCarouselItem itemId='12'>
             <MDBView>
               <img className='d-block w-100' src={I12} alt='slide 12' />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId='13'>
-            <MDBView>
-              <img className='d-block w-100' src={I13} alt='slide 13' />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId='14'>
-            <MDBView>
-              <img className='d-block w-100' src={I14} alt='slide 14' />
             </MDBView>
           </MDBCarouselItem>
         </MDBCarouselInner>

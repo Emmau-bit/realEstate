@@ -45,17 +45,8 @@ const Card = ({
             <div className='row m-auto'>
               <div className='col-md-6 col-sm-6'>
                 <small className=''>
-                  Status:
-                  {property.status && property.status.name === 'rent' ? (
-                    <span className='badge badge-pill p-1 badge-danger'>
-                      rent
-                    </span>
-                  ) : (
-                    <span className='badge badge-pill p-1 badge-success'>
-                      sale
-                    </span>
-                  )}
-                </small>{' '}
+                  Status: {property.status && property.status.name}
+                </small>
                 <br />
                 <small className=''>
                   Price:{' '}
